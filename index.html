@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 60px;
+            margin-bottom: 40px;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 14px;
+            color: #999;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 40px;
+            font-weight: 700;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 50px;
+        }
+
+        li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            padding-left: 8px;
+            border-left: 3px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .highlight {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .quote {
+            font-size: 22px;
+            font-style: italic;
+            color: #667eea;
+            text-align: center;
+            padding: 30px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .kpi-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .kpi-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .kpi-items {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            font-size: 14px;
+            color: #999;
+            font-weight: 600;
+        }
+
+        .title-slide {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .title-slide h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
+        }
+
+        .title-slide .subtitle {
+            font-size: 24px;
+            color: #764ba2;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .icon-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .small-icon {
+            width: 24px;
+            height: 24px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .small-icon.alt {
+            background: #764ba2;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .col-item h3 {
+            font-size: 18px;
+            color: #667eea;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .col-item ul {
+            margin-left: 0;
+        }
+
+        .col-item li {
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 8px;
+        }
+
+        .col-item li:before {
+            content: "→ ";
+            color: #667eea;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SLIDE 1: TITLE -->
+        <div class="slide title-slide">
+            <div class="slide-number">1 / 5</div>
+            <h1>Digital Marketing Strategy</h1>
+            <p class="subtitle">How we'll attract and retain our users</p>
+            <div style="margin-top: 40px;">
+                <span class="tag">Target Audience</span>
+                <span class="tag">Market Problem</span>
+                <span class="tag">Value Proposition</span>
+                <span class="tag">Go-to-Market</span>
+                <span class="tag">KPIs</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: TARGET AUDIENCE -->
+        <div class="slide">
+            <div class="slide-number">2 / 5</div>
+            <h2>Target Audience</h2>
+            <div class="content">
+                <div class="section">
+                    <div class="section-title">
+                        <span class="icon">👥</span>
+                        Primary Target
+                    </div>
+                    <ul>
+                        <li><strong>Age:</strong> 18–30 years old</li>
+                        <li><strong>Type:</strong> Students & early-career professionals</li>
+                        <li><strong>Tech-savvy:</strong> Already use Duolingo, fitness trackers, productivity apps</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span class="icon">🎯</span>
+                        Key Characteristics
+                    </div>
+                    <ul>
+                        <li>Want to improve <strong>multiple life areas</strong> at once (health, studies, finances, personal growth)</li>
+                        <li>Highly motivated in January but lose focus after <strong>2–3 weeks</strong></li>
+                        <li>Feel frustrated when breaking streaks or resolutions</li>
+                        <li>Love <strong>sharing progress</strong> with friends & competing (social media, group chats)</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    "Young adults who want accountability and friendly competition to stay committed to their resolutions"
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: PROBLEM & VALUE PROPOSITION -->
+        <div class="slide">
+            <div class="slide-number">3 / 5</div>
+            <h2>The Problem & Our Solution</h2>
+            <div class="content">
+                <div class="two-col">
+                    <div class="col-item">
+                        <h3>❌ Current Problem</h3>
+                        <ul>
+                            <li>80–90% abandon resolutions within weeks</li>
+                            <li>Existing apps focus on only <strong>one area</strong> (fitness, productivity)</li>
+                            <li>Classic trackers are <strong>too serious</strong> & individual</li>
+                            <li>Missing 3 key elements: <strong>goals + accountability + social competition</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-item">
+                        <h3>✅ Our Value Proposition</h3>
+                        <ul>
+                            <li><strong>All-in-one solution:</strong> goals, streaks, quotes, leaderboards</li>
+                            <li><strong>Playful & social:</strong> compete with friends in real-time</li>
+                            <li><strong>Multi-domain:</strong> health, studies, finances, personal growth</li>
+                            <li><strong>Perfect timing:</strong> manifestation trends + people wanting action</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote">
+                    "We turn your resolutions into a game you play with your friends, so you actually stick to them."
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: GO-TO-MARKET STRATEGY -->
+        <div class="slide">
+            <div class="slide-number">4 / 5</div>
+            <h2>Go-to-Market Strategy</h2>
+            <div class="content">
+                <div class="section">
+                    <div class="icon-row">
+                        <span class="small-icon">📱</span>
+                        <strong>Social Media Campaigns (TikTok & Instagram)</strong>
+                    </div>
+                    <ul>
+                        <li>Short, dynamic content: real people setting goals, keeping streaks, challenging friends</li>
+                        <li>Peak seasons: New Year + "back to school" with #ResolutionChallenge #HabitBuilding</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="icon-row">
+                        <span class="small-icon alt">⭐</span>
+                        <strong>Influencer Partnerships</strong>
+                    </div>
+                    <ul>
+                        <li>Micro-influencers in productivity, fitness, student life</li>
+                        <li>7–30 day challenges: they share streaks, quotes, leaderboard updates</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="icon-row">
+                        <span class="small-icon">🔄</span>
+                        <strong>Product-Led Growth & Virality</strong>
+                    </div>
+                    <ul>
+                        <li>Invite friends → join private leaderboards → compete on streaks</li>
+                        <li>Shareable milestones: "I completed 30 days!" with branded visuals</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="icon-row">
+                        <span class="small-icon alt">💰</span>
+                        <strong>Business Model</strong>
+                    </div>
+                    <ul>
+                        <li><strong>Freemium:</strong> Free up to 10 goals per user</li>
+                        <li><strong>Premium:</strong> Unlimited goals, advanced analytics, premium quote packs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: KPIs -->
+        <div class="slide">
+            <div class="slide-number">5 / 5</div>
+            <h2>Key Performance Indicators (KPIs)</h2>
+            <div class="content">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-title">📊 ACQUISITION</div>
+                        <div class="kpi-items">
+                            • App downloads<br>
+                            • Cost per install (CPI)<br>
+                            • Traffic from paid campaigns
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-title">🔥 ENGAGEMENT</div>
+                        <div class="kpi-items">
+                            • Daily/Weekly Active Users<br>
+                            • Avg. streak length<br>
+                            • Goals created per user
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-title">📈 RETENTION</div>
+                        <div class="kpi-items">
+                            • 30-day retention rate<br>
+                            • 90-day retention rate<br>
+                            • Active users post-January peak
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-title">💵 MONETIZATION</div>
+                        <div class="kpi-items">
+                            • Free-to-Premium conversion<br>
+                            • Average Revenue Per User<br>
+                            • Monthly Recurring Revenue
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight" style="margin-top: 40px;">
+                    <strong>Our goal:</strong> Acquire 10K users in 3 months, maintain 40%+ retention, convert 5% to premium.
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div style="text-align: center; margin-top: 40px;">
+            <button onclick="alert('This is a visual pitch deck for studying and memorizing your marketing strategy.')">Start Presenting</button>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                window.scrollBy(0, window.innerHeight + 60);
+            } else if (e.key === 'ArrowLeft') {
+                window.scrollBy(0, -(window.innerHeight + 60));
+            }
+        });
+    </script>
+</body>
+</html>
